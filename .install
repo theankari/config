@@ -1,0 +1,30 @@
+#! /bin/bash
+
+echo "Cloning config..."
+git clone --bare git@github.com:theankari/config.git $HOME/.cfg
+function config {
+   /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
+}
+mkdir -p .config-backup
+config checkout
+echo "Backing up conflicting files.."
+if [ $? = 0 ]; then
+  echo "Checked out config.";
+  else
+    echo "Backing up pre-existing dot files.";
+    config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .config-backup/{}
+fi;
+echo "Applying configs"
+config checkout
+config config status.showUntrackedFiles no
+
+echo "Installing makepkg and git.."
+sudo pacman -S makepkg git
+
+echo "Installing yay.."
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+
+echo "Installing packages.."
+yay -S --needed ./packages.txt
