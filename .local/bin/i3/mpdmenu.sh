@@ -1,1 +1,1 @@
-/home/aron/.config/rofi/scripts/mpdmenu.sh
+../../../.config/rofi/scripts/mpdmenu.sh

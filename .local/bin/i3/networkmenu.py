@@ -1,1 +1,1 @@
-/home/aron/.config/rofi/scripts/networkmenu.py
+../../../.config/rofi/scripts/networkmenu.py

@@ -1,10 +1,15 @@
-#! /bin/bash -e
+#! /bin/bash
+
+echo "TODO: Enable multilib repo"
+echo "Configuring mirrorlists.."
+sudo pacman -S --noconfirm reflector
+sudo reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist
 
 echo "Updating packages.."
-sudo pacman -Syu
+sudo pacman -Syu --noconfirm
 
 echo "Installing git.."
-sudo pacman -S git base-devel
+sudo pacman -S --noconfirm git base-devel
 
 echo "Cloning config..."
 git clone --bare https://github.com/theankari/config.git $HOME/.cfg
@@ -12,9 +17,8 @@ function config {
    /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
 }
 mkdir -p .config-backup
-config checkout || true
+config checkou
 if [ $? = 0 ]; then
-echo "Backing up conflicting files.."
   echo "Checked out config.";
   else
     echo "Backing up pre-existing dot files.";
@@ -32,5 +36,5 @@ cd ..
 rm -rf yay
 
 echo "Installing packages.."
-yay -S --needed ./packages.txt
+yay -S --needed --noconfirm ./packages.txt
 

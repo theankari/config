@@ -1,1 +1,1 @@
-/home/aron/.config/rofi/scripts/scrotmenu.sh
+../../../.config/rofi/scripts/scrotmenu.sh

@@ -1,1 +1,1 @@
-/home/aron/.config/rofi/scripts/appsmenu.sh
+../../../.config/rofi/scripts/appsmenu.sh

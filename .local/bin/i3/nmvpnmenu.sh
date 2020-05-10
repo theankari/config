@@ -1,1 +1,1 @@
-/home/aron/.config/rofi/scripts/nmvpnmenu.sh
+../../../.config/rofi/scripts/nmvpnmenu.sh

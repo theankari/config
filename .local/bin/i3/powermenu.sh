@@ -1,1 +1,1 @@
-/home/aron/.config/rofi/scripts/powermenu.sh
+../../../.config/rofi/scripts/powermenu.sh

@@ -1,1 +1,1 @@
-/home/aron/.config/rofi/scripts/promptmenu.sh
+../../../.config/rofi/scripts/promptmenu.sh
