@@ -1,14 +1,20 @@
-#! /bin/bash
+#! /bin/bash -e
+
+echo "Updating packages.."
+sudo pacman -Syu
+
+echo "Installing git.."
+sudo pacman -S git base-devel
 
 echo "Cloning config..."
-git clone --bare git@github.com:theankari/config.git $HOME/.cfg
+git clone --bare https://github.com/theankari/config.git $HOME/.cfg
 function config {
    /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
 }
 mkdir -p .config-backup
-config checkout
-echo "Backing up conflicting files.."
+config checkout || true
 if [ $? = 0 ]; then
+echo "Backing up conflicting files.."
   echo "Checked out config.";
   else
     echo "Backing up pre-existing dot files.";
@@ -18,13 +24,13 @@ echo "Applying configs"
 config checkout
 config config status.showUntrackedFiles no
 
-echo "Installing makepkg and git.."
-sudo pacman -S makepkg git
-
 echo "Installing yay.."
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
+cd ..
+rm -rf yay
 
 echo "Installing packages.."
 yay -S --needed ./packages.txt
+
