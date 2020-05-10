@@ -1,0 +1,11 @@
+#!/bin/bash -xe
+
+SELECTION=$(xsel -o)
+
+TO_TRANSLATE=$(echo $SELECTION | sed "s/[\"'<>]//g")
+
+RAW_TRANSLATION=$(wget -U "Mozilla/5.0" -qO - "http://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=en&dt=t&q=$TO_TRANSLATE")
+
+TRANSLATION=$(echo $RAW_TRANSLATION | sed "s/,,,0]],,.*//g" | awk -F'"' '{print $2, $6}')
+
+notify-send --icon=info "$SELECTION" "$TRANSLATION"

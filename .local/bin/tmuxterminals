@@ -1,0 +1,2 @@
+#!/bin/bash
+tmux attach -t terminals || tmux new -s terminals

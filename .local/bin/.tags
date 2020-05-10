@@ -1,0 +1,5 @@
+!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
+codecs	/home/aron/.local/bin/convertHtmlToJson.py	/^import codecs$/;"	i	language:Python
+htmlText	/home/aron/.local/bin/convertHtmlToJson.py	/^    htmlText = codecs.open(sys.argv[1], encoding='utf-8').read()$/;"	v	language:Python
+os	/home/aron/.local/bin/convertHtmlToJson.py	/^import os$/;"	i	language:Python
+sys	/home/aron/.local/bin/convertHtmlToJson.py	/^import sys$/;"	i	language:Python

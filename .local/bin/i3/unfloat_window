@@ -1,0 +1,5 @@
+#! /bin/bash -ex
+
+window_id="${1:-$(xwininfo | grep 'id: 0x' | grep -Eo '0x[a-z0-9]+')}"
+
+i3-msg "[id=$window_id]" floating disable

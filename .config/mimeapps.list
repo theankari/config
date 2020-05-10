@@ -1,0 +1,17 @@
+[Default Applications]
+text/html=google-chrome.desktop
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
+x-scheme-handler/about=google-chrome.desktop
+x-scheme-handler/unknown=google-chrome.desktop
+x-scheme-handler/postman=Postman.desktop
+x-scheme-handler/kite=kite-copilot.desktop
+x-scheme-handler/mailto=google-chrome.desktop
+x-scheme-handler/webcal=google-chrome.desktop
+
+[Added Associations]
+text/plain=code-oss.desktop;
+text/x-sh=code-oss.desktop;
+application/pdf=firefox.desktop;
+image/jpeg=org.gnome.eog.desktop;
+image/png=feh.desktop;

@@ -1,0 +1,58 @@
+#! /bin/bash
+
+IFS='
+' # split on newline only
+set -o noglob # disable globbing
+
+function move {
+    echo $1
+    echo $2
+    if [[ -e $1 ]]
+    then
+        if [[ ! -d $2 ]]
+        then
+            mkdir --parents $2
+        fi
+    fi
+    mv $1 $2
+}
+
+export -f move
+
+#Install zsh
+sudo pacman -S zsh
+
+#Install Oh My Zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+CONF_DIR=$HOME/.myconf
+
+git clone --bare git@github.com:theankari/machine-config.git $CONF_DIR
+function config {
+    /usr/bin/git --git-dir=$CONF_DIR --work-tree=$HOME $@
+}
+mkdir -p .config-backup
+config checkout
+if [ $? = 0 ]; then
+    echo "Checked out config.";
+else
+    echo "Backing up pre-existing dot files.";
+    CONFLICTING_FILES=$(config checkout 2>&1 | egrep "\s+\.")
+    while IFS= read -r line ; do 
+        line_no_leading_space="$(echo -e "${line}" | sed -e 's/^[[:space:]]*//')"
+        move "$line_no_leading_space" ".config-backup/$line_no_leading_space"
+    done <<< "$CONFLICTING_FILES"
+fi;
+config checkout
+config config status.showUntrackedFiles no
+
+#update font-cache
+fc-cahce
+
+#Install Dependencies (requiers pacaur)
+#Install required packages
+pacaur -S - < $HOME/.config_dependencies --noconfirm --noedit --needed
+sudo pacman -S - < $HOME/.config_dependencies --noconfirm --needed
+
+#change default shell to zsh
+#chsh -s /bin/zsh

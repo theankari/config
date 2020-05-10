@@ -1,0 +1,38 @@
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! User: aron
+! ------------------------------------------------------------------------------
+
+! State:           'bg',     'fg',     'bgalt',  'hlbg',   'hlfg'
+! "Color scheme for normal row" Set from: File
+rofi.color-normal:                   argb:00000000, #ffffff, argb:00000000, argb:aaffffff, #000000
+
+! "Color scheme for urgent row" Set from: File
+rofi.color-urgent:                   argb:88000000, #ffffff, argb:88000000, argb:aaffffff, #88000000
+! "Color scheme for active row" Set from: File
+rofi.color-active:                   argb:88000000, #ffffff, argb:88000000, argb:aaffffff, #88000000
+! "Color scheme window" Set from: File
+rofi.color-window:                   argb:88000000, #ffffff, #ffffff
+
+! "Separator style (none, dash, solid)" Set from: XResources
+rofi.separator-style:                none
+
+rofi.fullscreen: 					false
+
+rofi.hide-scrollbar: 				true
+
+rofi.lines: 				8
+
+rofi.width: 						50
+
+!rofi.padding: 						300
+
+!Border width
+rofi.bw: 							0
+
+!Element height
+rofi.eh: 1
+
+rofi.monitor: 						-1
+
+rofi.font: Dejavu Sans Mono 20

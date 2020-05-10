@@ -1,0 +1,1 @@
+/home/aron/.config/rofi/scripts/nmvpnmenu.sh

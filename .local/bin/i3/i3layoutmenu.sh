@@ -1,0 +1,1 @@
+/home/aron/.config/rofi/scripts/i3layoutmenu.sh
