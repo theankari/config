@@ -613,8 +613,6 @@ npth
 nspr
 nss
 ntp
-oh-my-zsh-git
-oh-my-zsh-powerline-theme-git
 oniguruma
 openal
 opencore-amr
@@ -1003,8 +1001,5 @@ zita-alsa-pcmi
 zita-resampler
 zlib
 zsh
-zsh-autosuggestions
-zsh-fast-syntax-highlighting-git
-zsh-theme-powerlevel10k-git
 zstd
 zziplib

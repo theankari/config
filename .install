@@ -41,7 +41,18 @@ rm -rf yay
 fi
 
 echo "Installing packages.."
-yay -S --needed --noconfirm ./packages.txt
+yay -S --needed --noconfirm - < .packages.txt
+
+echo "Installing tmux plugin manager.."
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+echo "Installing oh my zsh.."
+git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
 
 echo "Changing default shell to zsh.."
 chsh --shell /bin/zsh
+
+# TODO: Set up oh my zsh

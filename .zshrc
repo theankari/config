@@ -23,12 +23,12 @@ fi
 
 # Path to your oh-my-zsh installation.
 # export ZSH=/home/aron/.oh-my-zsh
-export ZSH=/usr/share/oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel10k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -86,7 +86,7 @@ plugins=(
   colored-man-pages
   extract
   archlinux
-  fast-syntax-highlighting
+  zsh-syntax-highlighting
   zsh-autosuggestions
 )
 
