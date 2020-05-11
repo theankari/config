@@ -14,7 +14,7 @@ echo "Updating packages.."
 sudo pacman -Syu --noconfirm
 
 echo "Installing git.."
-sudo pacman -S --noconfirm --needed git base-devel
+sudo pacman -S --noconfirm --needed git base-devel go
 
 echo "Cloning config..."
 git clone --bare https://github.com/theankari/config.git $HOME/.cfg
