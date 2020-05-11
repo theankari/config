@@ -88,6 +88,7 @@ plugins=(
   archlinux
   zsh-syntax-highlighting
   zsh-autosuggestions
+  zsh-completions
 )
 
 ZSH_DISABLE_COMPFIX=true
