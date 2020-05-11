@@ -29,7 +29,8 @@ config checkout
 config config status.showUntrackedFiles no
 
 sudo pacman -Qi yay > /dev/null
-if [$? -ne 0]
+YAY_PRESENT=$?
+if [ $YAY_PRESENT -ne 0 ]
 then
   echo "Installing yay.."
   git clone https://aur.archlinux.org/yay.git
