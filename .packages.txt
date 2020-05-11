@@ -597,7 +597,7 @@ mpg123
 mtdev
 ncurses
 ndctl
-nerd-fonts-complete
+nerd-fonts-source-code-pro
 net-tools
 netctl
 netstat-nat

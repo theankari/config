@@ -295,7 +295,7 @@ bindsym XF86AudioPrev exec playerctl previous
 #Autostart scripts
 exec_always     --no-startup-id exec ~/.autostart/autostart
 exec_always		--no-stratup-id exec thunar --daemon
-exec_always     --no-startup-id exec feh --bg-fill /home/aron/Pictures/Backgrounds/background-arch.jpg
+exec_always     --no-startup-id exec feh --bg-fill $HOME/Pictures/Backgrounds/background-arch.jpg
 exec_always		--no-startup-id exec /usr/bin/dunst
 exec_always     --no-startup-id exec nm-applet
 exec_always     --no-startup-id exec ~/.local/bin/monitorsetup
@@ -304,7 +304,7 @@ exec_always     --no-startup-id exec setxkbmap -layout us,hu,ro,de -option 'grp:
 exec_always		--no-startup-id exec picom
 
 #lock screen
-exec_always     --no-startup-id exec xautolock -corners 00+- -cornerdelay 1 -time 10 -locker "/home/aron/.local/bin/i3/fuzzy_lock.sh" &
+exec_always     --no-startup-id exec xautolock -corners 00+- -cornerdelay 1 -time 10 -locker "$HOME/.local/bin/i3/fuzzy_lock.sh" &
 exec            --no-startup-id exec synapse -s
 
 
