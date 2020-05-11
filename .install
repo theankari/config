@@ -3,7 +3,7 @@
 echo "TODO: Enable multilib repo"
 echo "Is multilib enabled? [yes/no]:"
 read MULTILIB_ENABLED
-if [ $MULTILIB_ENABLED -ne "yes" ]; then
+if [[ "$MULTILIB_ENABLED" != "yes" ]]; then
   exit -1
 fi
 echo "Configuring mirrorlists.."
