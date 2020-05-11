@@ -114,7 +114,6 @@ gawk
 gc
 gcc
 gcc-libs
-gconf
 gcr
 gdbm
 gdk-pixbuf2
@@ -123,7 +122,6 @@ gettext
 giblib
 giflib
 git
-github-desktop
 glew
 glew1.10
 glib-networking
@@ -134,7 +132,6 @@ glslang
 glu
 gmp
 gnome-desktop
-gnome-keyring
 gnu-free-fonts
 gnu-netcat
 gnupg
@@ -674,7 +671,6 @@ playerctl
 playonlinux
 polkit
 polybar-git
-popcorntime
 popt
 portaudio
 postgresql-libs
@@ -743,6 +739,7 @@ python-importlib-metadata
 python-itsdangerous
 python-jinja
 python-jsonschema
+python-ldap3
 python-mako
 python-markupsafe
 python-mimeparse
@@ -813,7 +810,12 @@ rest
 rhash
 ripgrep
 rofi
+rsync
 rtkit
+ruby
+ruby-irb
+ruby-reline
+rubygems
 runc
 runescape-launcher
 sbc
@@ -882,6 +884,7 @@ usbmuxd
 usbutils
 util-linux
 v4l-utils
+vagrant
 vid.stab
 vim-runtime
 virtualbox

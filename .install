@@ -17,24 +17,30 @@ function config {
    /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
 }
 mkdir -p .config-backup
-config checkou
+config checkout
 if [ $? = 0 ]; then
   echo "Checked out config.";
   else
     echo "Backing up pre-existing dot files.";
     config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .config-backup/{}
 fi;
-echo "Applying configs"
+echo "Applying configs";
 config checkout
 config config status.showUntrackedFiles no
 
-echo "Installing yay.."
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
+sudo pacman -Qi yay > /dev/null
+if [$? -ne 0]
+then
+  echo "Installing yay.."
+  git clone https://aur.archlinux.org/yay.git
+  cd yay
+  makepkg -si
 cd ..
 rm -rf yay
+fi
 
 echo "Installing packages.."
 yay -S --needed --noconfirm ./packages.txt
 
+echo "Changing default shell to zsh.."
+chsh --shell /bin/zsh
