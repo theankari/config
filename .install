@@ -62,3 +62,6 @@ echo "Changing default shell to zsh.."
 USER=$(whoami)
 sudo chsh --shell /bin/zsh $USER
 
+echo "Cleaning pacman caches"
+sudo pacman -Scc --noconfirm
+yay -Scc --noconfirm
