@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-fill '/home/aron/Pictures/Backgrounds/background-arch.jpg' 
+feh --no-fehbg --bg-fill "$HOME/Pictures/Backgrounds/background-arch.jpg"
